@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Member Tracker</title>
+	<meta charset="utf-8" />
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script type="text/javascript" src="app/app.js"></script>
+    <script type="text/javascript" src="app/memberService.js"></script>
+
+</head>
+<body ng-app="memberApp">
+    <div class="jumbotron">
+        <h1>Member Tracker</h1>
+        <p>Basic angular.js app to explore and learn angular.js 1.x features.</p>
+    </div>
+    <div ng-controller="memberController">
+        <section id="addMemberSection">
+            <form>
+                <div>
+                    <label for="firstName">First Name</label>
+                    <input name="firstName" type="text" ng-model="member.firstName" />
+                </div>
+                <div>
+                    <label for="lastName">Last Name</label>
+                    <input name="lastName" type="text" ng-model="member.lastName" />
+                </div>
+                <div>
+                    <label for="dateOfBirth">Date of Birth</label>
+                    <input name="dateOfBirth" type="date" ng-model="member.dateOfBirth" />
+                </div>
+                <div>
+                    <label for="gender">Gender</label>
+                    <select name="gender" ng-options="g for g in genders" ng-model="member.gender"></select>
+                </div>
+                <div>
+                    <label for="isCurrent">Is Current Member</label>
+                    <input name="isCurrent" type="checkbox" ng-model="member.isCurrent" />
+                </div>
+                <div>
+                    <button ng-click="addMember()">Add Member</button>
+                </div>
+            </form>
+        </section>
+
+        <section id="statusSection">
+            <h4>
+                Status
+            </h4>
+            <p>{{status}}</p>
+        </section>
+    </div>
+</body>
+</html>
