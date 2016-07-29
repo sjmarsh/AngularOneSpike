@@ -5,8 +5,12 @@
 	<meta charset="utf-8" />
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.js"></script>
     <script type="text/javascript" src="app/app.js"></script>
     <script type="text/javascript" src="app/memberService.js"></script>
+    <script type="text/javascript" src="app/memberController.js"></script>
+    <script type="text/javascript" src="app/memberDetailController.js"></script>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     
@@ -16,71 +20,8 @@
         <h1>Member Tracker</h1>
         <p>Basic angular.js app to explore and learn angular.js 1.x features.</p>
     </div>
-    <div ng-controller="memberController">
-        <div id="addMemberSection" class="well">
-            <form>
-                <div class="row">
-                    <div class="form-group col-md-6">
-                        <label for="firstName">First Name</label>
-                        <input name="firstName" type="text" class="form-control" ng-model="member.firstName" />
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="lastName">Last Name</label>
-                        <input name="lastName" type="text" class="form-control" ng-model="member.lastName" />
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="form-group col-md-4">
-                        <label for="dateOfBirth">Date of Birth</label>
-                        <input name="dateOfBirth" type="date" class="form-control" ng-model="member.dateOfBirth" />
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label for="gender">Gender</label>
-                        <select name="gender" ng-options="g for g in genders" class="form-control" ng-model="member.gender"></select>
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label for="isCurrent">Is Current Member</label>
-                        <input name="isCurrent" type="checkbox" ng-model="member.isCurrent" />
-                    </div>
-                </div>
-                <div>
-                    <button ng-click="addMember()" class="button">Add Member</button>
-                </div>
-            </form>
-        </div>
-        <div id="memberListSection">
-            <h3>Member List</h3>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Date of Birth</th>
-                        <th>Gender</th>
-                        <th>Is Current?</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody class="table-striped">
-                    <tr ng-repeat="m in members">
-                        <td>{{m.FirstName}}</td>
-                        <td>{{m.LastName}}</td>
-                        <td>{{m.DateOfBirth | date: "dd-MM-yyyy"}}</td>
-                        <td>{{m.Gender}}</td>
-                        <td>{{m.IsCurrent}}</td>
-                        <td><a href="" ng-click="deleteMember(m)">Delete</a></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <br />
-        <hr />
-        <div id="statusSection">
-            <h4>
-                Status
-            </h4>
-            <p>{{status}}</p>
-        </div>
-    </div>
+    
+    <div class="page {{ pageClass }}" ng-view></div>
+    
 </body>
 </html>

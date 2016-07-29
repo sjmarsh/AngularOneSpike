@@ -114,7 +114,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\app.js" />
+    <Content Include="app\memberController.js" />
+    <Content Include="app\memberDetailController.js" />
     <Content Include="app\memberService.js" />
+    <Content Include="app\views\page-home.html" />
+    <Content Include="app\views\page-member-detail.html" />
     <Content Include="Global.asax" />
     <Content Include="Index.html" />
     <Content Include="Web.config" />

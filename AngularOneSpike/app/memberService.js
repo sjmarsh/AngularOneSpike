@@ -14,6 +14,10 @@
     return $http.post(baseUrl, member);
   }
 
+  this.updateMember = function (member) {
+    return $http.put(baseUrl, member);
+  }
+
   this.deleteMember = function (id) {
     return $http.delete(baseUrl + '/' + id);
   }

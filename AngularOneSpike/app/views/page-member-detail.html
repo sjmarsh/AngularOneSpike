@@ -1,0 +1,38 @@
+﻿<div id="updateMemberSection" class="well">
+    <form>
+        <h2>Update Member</h2>
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label for="firstName">First Name</label>
+                <input name="firstName" type="text" class="form-control" ng-model="memberDetail.FirstName" />
+            </div>
+            <div class="form-group col-md-6">
+                <label for="lastName">Last Name</label>
+                <input name="lastName" type="text" class="form-control" ng-model="memberDetail.LastName" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-4">
+                <label for="dateOfBirth">Date of Birth</label>
+                <input name="dateOfBirth" type="date" class="form-control" ng-model="memberDetail.DateOfBirth" />
+            </div>
+            <div class="form-group col-md-4">
+                <label for="gender">Gender</label>
+                <select name="gender" ng-options="g for g in genders" class="form-control" ng-model="memberDetail.Gender"></select>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="isCurrent">Is Current Member</label>
+                <input name="isCurrent" type="checkbox" ng-model="memberDetail.IsCurrent" />
+            </div>
+        </div>
+        <div align="right">
+            <button ng-click="updateMember()" class="btn btn-primary">Update</button>
+        </div>
+    </form>
+</div>
+<div id="statusSection">
+    <h4>
+        Status
+    </h4>
+    <p>{{status}}</p>
+</div>
