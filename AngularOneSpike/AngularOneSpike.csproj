@@ -117,6 +117,7 @@
     <Content Include="app\memberController.js" />
     <Content Include="app\memberDetailController.js" />
     <Content Include="app\memberService.js" />
+    <Content Include="app\styles\styles.css" />
     <Content Include="app\views\page-home.html" />
     <Content Include="app\views\page-member-detail.html" />
     <Content Include="Global.asax" />
