@@ -1,6 +1,6 @@
 ﻿app.service('memberService', ['$http', function ($http) {
 
-  var baseUrl = 'http://localhost:4963/api/member';
+  var baseUrl = '/api/member';
 
   this.getMember = function (id) {
     return $http.get(baseUrl + '/' + id);
