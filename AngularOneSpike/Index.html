@@ -51,6 +51,7 @@
                         <th>Date of Birth</th>
                         <th>Gender</th>
                         <th>Is Current?</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -60,6 +61,7 @@
                         <td>{{m.DateOfBirth | date: "dd-MM-yyyy"}}</td>
                         <td>{{m.Gender}}</td>
                         <td>{{m.IsCurrent}}</td>
+                        <td><a href="" ng-click="deleteMember(m)">Delete</a></td>
                     </tr>
                 </tbody>
             </table>

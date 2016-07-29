@@ -21,6 +21,17 @@ app.controller('memberController', ['$scope', 'memberService', function ($scope,
     })
   };
 
+  $scope.deleteMember = function (member) {
+    memberService.deleteMember(member.Id)
+    .success(function () {
+      $scope.status = 'Member with id ' + member.Id + ' has been deleted.';
+      getMembers();
+    })
+    .error(function (error) {
+      $scope.status = 'Error occured while deleting member. Error Message: ' + error.message;
+    })
+  }
+
   function getMembers() {
     memberService.getMemberList()
     .success(function (members) {
