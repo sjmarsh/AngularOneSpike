@@ -15,7 +15,7 @@
         <p>Basic angular.js app to explore and learn angular.js 1.x features.</p>
     </div>
     <div ng-controller="memberController">
-        <section id="addMemberSection">
+        <div id="addMemberSection">
             <form>
                 <div>
                     <label for="firstName">First Name</label>
@@ -41,14 +41,35 @@
                     <button ng-click="addMember()">Add Member</button>
                 </div>
             </form>
-        </section>
-
-        <section id="statusSection">
+        </div>
+        <div id="memberListSection">
+            <table>
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Date of Birth</th>
+                        <th>Gender</th>
+                        <th>Is Current?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="m in members">
+                        <td>{{m.FirstName}}</td>
+                        <td>{{m.LastName}}</td>
+                        <td>{{m.DateOfBirth | date: "dd-MM-yyyy"}}</td>
+                        <td>{{m.Gender}}</td>
+                        <td>{{m.IsCurrent}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="statusSection">
             <h4>
                 Status
             </h4>
             <p>{{status}}</p>
-        </section>
+        </div>
     </div>
 </body>
 </html>
