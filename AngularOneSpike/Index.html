@@ -8,42 +8,49 @@
     <script type="text/javascript" src="app/app.js"></script>
     <script type="text/javascript" src="app/memberService.js"></script>
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    
 </head>
-<body ng-app="memberApp">
+<body ng-app="memberApp" style="padding:5px">
     <div class="jumbotron">
         <h1>Member Tracker</h1>
         <p>Basic angular.js app to explore and learn angular.js 1.x features.</p>
     </div>
     <div ng-controller="memberController">
-        <div id="addMemberSection">
+        <div id="addMemberSection" class="well">
             <form>
-                <div>
-                    <label for="firstName">First Name</label>
-                    <input name="firstName" type="text" ng-model="member.firstName" />
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label for="firstName">First Name</label>
+                        <input name="firstName" type="text" class="form-control" ng-model="member.firstName" />
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="lastName">Last Name</label>
+                        <input name="lastName" type="text" class="form-control" ng-model="member.lastName" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-4">
+                        <label for="dateOfBirth">Date of Birth</label>
+                        <input name="dateOfBirth" type="date" class="form-control" ng-model="member.dateOfBirth" />
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="gender">Gender</label>
+                        <select name="gender" ng-options="g for g in genders" class="form-control" ng-model="member.gender"></select>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="isCurrent">Is Current Member</label>
+                        <input name="isCurrent" type="checkbox" ng-model="member.isCurrent" />
+                    </div>
                 </div>
                 <div>
-                    <label for="lastName">Last Name</label>
-                    <input name="lastName" type="text" ng-model="member.lastName" />
-                </div>
-                <div>
-                    <label for="dateOfBirth">Date of Birth</label>
-                    <input name="dateOfBirth" type="date" ng-model="member.dateOfBirth" />
-                </div>
-                <div>
-                    <label for="gender">Gender</label>
-                    <select name="gender" ng-options="g for g in genders" ng-model="member.gender"></select>
-                </div>
-                <div>
-                    <label for="isCurrent">Is Current Member</label>
-                    <input name="isCurrent" type="checkbox" ng-model="member.isCurrent" />
-                </div>
-                <div>
-                    <button ng-click="addMember()">Add Member</button>
+                    <button ng-click="addMember()" class="button">Add Member</button>
                 </div>
             </form>
         </div>
         <div id="memberListSection">
-            <table>
+            <h3>Member List</h3>
+            <table class="table">
                 <thead>
                     <tr>
                         <th>First Name</th>
@@ -54,7 +61,7 @@
                         <th></th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody class="table-striped">
                     <tr ng-repeat="m in members">
                         <td>{{m.FirstName}}</td>
                         <td>{{m.LastName}}</td>
@@ -66,6 +73,8 @@
                 </tbody>
             </table>
         </div>
+        <br />
+        <hr />
         <div id="statusSection">
             <h4>
                 Status
