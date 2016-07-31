@@ -52,3 +52,15 @@
 /* angular js animation styles*/
 .ng-enter           { animation: slideInRight 0.5s both ease-in; z-index: 8888; }
 .ng-leave           { animation: slideOutLeft 0.5s both ease-in; z-index: 9999; }
+
+
+/*validation
+    Reference: http://blog.yodersolutions.com/bootstrap-form-validation-done-right-in-angularjs/
+*/
+.form-group .help-block {
+  display: none;
+}
+
+.form-group.has-error .help-block {
+  display: block;
+}
